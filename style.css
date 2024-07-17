@@ -1,0 +1,1111 @@
+@charset "UTF-8";
+@keyframes shake {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+@keyframes bounceDown {
+  0%, 75%, 90%, 0%, 100% {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -3000px, 0);
+  }
+  60% {
+    opacity: 1;
+    transform: translate3d(0, 25px, 0);
+  }
+  75% {
+    transform: translate3d(0, -10px, 0);
+  }
+  90% {
+    transform: translate3d(0, 5px, 0);
+  }
+  100% {
+    transform: none;
+  }
+}
+@keyframes flipInX {
+  0% {
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  40% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    animation-timing-function: ease-in;
+  }
+  60% {
+    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    opacity: 1;
+  }
+  80% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+  }
+  100% {
+    transform: perspective(400px);
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-image: url(/background-img/海洋背景.png);
+}
+body nav .nav-bar {
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(242, 207, 61);
+}
+body nav .nav-bar .homepage {
+  width: 20%;
+  height: auto;
+  margin: 10px 20px;
+}
+body nav .nav-bar .homepage img {
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+body nav .nav-bar .navtext {
+  margin: 10px 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+body nav .nav-bar .navtext p a {
+  padding: 5px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: rgb(20, 20, 20);
+  transition: color 0.5s;
+}
+body nav .nav-bar .navtext p a:hover {
+  color: rgb(209, 68, 57);
+}
+body .sidebar-header {
+  position: fixed;
+  top: 100px;
+  left: 15px;
+  z-index: 888;
+}
+body .sidebar-header ul {
+  width: 100%;
+}
+body .sidebar-header ul li {
+  padding: 10px 10px;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(242, 207, 61);
+  border-bottom: 0.5px solid rgb(29, 139, 145);
+  transition: background-color 0.5s, color 0.5s;
+  font-size: 14px;
+}
+body .sidebar-header ul li:first-child {
+  border-radius: 8px 8px 0px 0px;
+}
+body .sidebar-header ul li:last-child {
+  border-radius: 0px 0px 8px 8px;
+  border-bottom: none;
+}
+body .sidebar-header ul li:hover {
+  background-color: rgb(209, 68, 57);
+  color: rgb(255, 255, 255);
+}
+body .sidebar-header ul li:hover a {
+  color: rgb(255, 255, 255);
+}
+body .sidebar-header ul li a {
+  text-decoration: none;
+  color: rgb(29, 139, 145);
+  transition: color 0.5s;
+}
+body .scrollmenu {
+  overflow-x: auto;
+  white-space: nowrap;
+  width: 100%;
+}
+body .scrollmenu ul {
+  display: inline-flex;
+  margin: 5px;
+}
+body .scrollmenu ul li {
+  margin: 0px 3px;
+  padding: 10px 6.25%;
+  list-style: none;
+  background-color: rgb(242, 207, 61);
+  border-radius: 30px;
+}
+body .scrollmenu ul li a {
+  font-size: 0.8rem;
+  text-decoration: none;
+  color: rgb(29, 139, 145);
+}
+body .scrollmenu ul li:hover {
+  background-color: rgb(209, 68, 57);
+}
+body .scrollmenu ul li:hover a {
+  color: rgb(255, 255, 255);
+}
+body .scrollmenu::-webkit-scrollbar {
+  height: 5px;
+}
+body .scrollmenu::-webkit-scrollbar-button {
+  background: transparent;
+  border-radius: 3px;
+}
+body .scrollmenu::-webkit-scrollbar-track-piece {
+  background: transparent;
+}
+body .scrollmenu::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgb(242, 207, 61);
+}
+body .sticky {
+  position: sticky;
+  top: 0px;
+  z-index: 999;
+}
+body header .header-banner {
+  width: 100%;
+  position: relative;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  max-width: 1920px;
+  margin: auto;
+  flex-wrap: wrap-reverse;
+}
+body header .header-banner img {
+  display: flex;
+  text-align: center;
+  width: 100%;
+  z-index: -2;
+  vertical-align: middle;
+}
+body header .header-banner .samll-img {
+  width: 100%;
+  position: relative;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  max-width: 1920px;
+  visibility: visible;
+}
+body header .header-banner .samll-img .fun {
+  position: absolute;
+  top: 25px;
+  left: 25%;
+}
+body header .header-banner .samll-img .fun img {
+  width: 100%;
+}
+body header .header-banner .samll-img .summer-text {
+  position: absolute;
+  top: 260px;
+  left: 40%;
+}
+body header .header-banner .samll-img .summer-text img {
+  width: 100%;
+}
+body header .header-banner .samll-img .date {
+  position: absolute;
+  top: 455px;
+  left: 40%;
+}
+body header .header-banner .samll-img .date img {
+  width: 100%;
+}
+body header .header-banner .samll-img .banner-discount {
+  position: absolute;
+  top: 200px;
+  left: 55%;
+}
+body header .header-banner .samll-img .banner-discount img {
+  width: 100%;
+  height: auto;
+}
+body header .header-banner .img-wave {
+  width: 100%;
+  position: relative;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  max-width: 1920px;
+  z-index: -1;
+  visibility: visible;
+}
+body header .header-banner .img-wave .wave01 {
+  position: absolute;
+  top: 550px;
+}
+body header .header-banner .img-wave .wave02 {
+  position: absolute;
+  top: 680px;
+}
+body .banner-768 img {
+  display: flex;
+  text-align: center;
+  width: 100%;
+  z-index: -2;
+  vertical-align: middle;
+}
+body .banner-576 img {
+  display: flex;
+  text-align: center;
+  width: 100%;
+  z-index: -2;
+  vertical-align: middle;
+}
+body .background-img {
+  width: 100%;
+  position: relative;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  max-width: 1920px;
+  margin: auto;
+  flex-wrap: wrap-reverse;
+}
+body .background-img .imgs {
+  text-align: center;
+  width: 100%;
+  z-index: -3;
+}
+body .background-img .imgs .lifebuoy01 {
+  position: absolute;
+  top: 250px;
+  right: 20px;
+  width: 15%;
+}
+body .background-img .imgs .lifebuoy01 img {
+  width: 100%;
+}
+body .background-img .imgs .lifebuoy02 {
+  position: absolute;
+  top: 750px;
+  left: -10px;
+  width: 15%;
+}
+body .background-img .imgs .lifebuoy02 img {
+  width: 100%;
+}
+body .background-img .imgs .play-people01 {
+  position: absolute;
+  top: 1550px;
+  left: 30px;
+  width: 15%;
+}
+body .background-img .imgs .play-people01 img {
+  width: 100%;
+}
+body .background-img .imgs .play-people02 {
+  position: absolute;
+  top: 2000px;
+  right: 20px;
+  width: 15%;
+}
+body .background-img .imgs .play-people02 img {
+  width: 100%;
+}
+body .background-img .imgs .play-people03 {
+  position: absolute;
+  top: 1250px;
+  right: 80px;
+  width: 15%;
+}
+body .background-img .imgs .play-people03 img {
+  width: 100%;
+}
+body .background-img .imgs .ball {
+  position: absolute;
+  top: 1850px;
+  right: 40px;
+  width: 8%;
+}
+body .background-img .imgs .ball img {
+  width: 100%;
+}
+body .background-img .imgs .surf01 {
+  position: absolute;
+  top: 3000px;
+  right: 10px;
+  width: 13%;
+}
+body .background-img .imgs .surf01 img {
+  width: 100%;
+}
+body .background-img .imgs .surf02 {
+  position: absolute;
+  top: 3500px;
+  left: 30px;
+  width: 13%;
+}
+body .background-img .imgs .surf02 img {
+  width: 100%;
+}
+body .background-img .imgs .fish-white {
+  position: absolute;
+  top: 4500px;
+  right: 0px;
+  width: 20%;
+}
+body .background-img .imgs .fish-white img {
+  width: 100%;
+}
+body .background-img .imgs .fish-black {
+  position: absolute;
+  top: 6000px;
+  left: -100px;
+  width: 25%;
+}
+body .background-img .imgs .fish-black img {
+  width: 100%;
+}
+body .background-img .imgs .cloud {
+  position: fixed;
+  bottom: 0px;
+}
+body .background-img .imgs .cloud img {
+  width: 100%;
+  vertical-align: middle;
+}
+body main {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+body main a {
+  text-decoration: none;
+  color: rgb(20, 20, 20);
+}
+body main .part01 {
+  background-color: rgb(38, 172, 187);
+  padding: 10px 20px;
+  border-radius: 150px 150px 20px 20px;
+  margin-top: 100px;
+}
+body main .part01 .recommend {
+  margin-top: 20px;
+}
+body main .part01 .recommend .title01 {
+  margin-bottom: 20px;
+}
+body main .part01 .recommend .title01 h1 {
+  font-size: 3rem;
+  background: url("/background-img/標題01.png") no-repeat center;
+  background-size: 100%;
+  text-align: center;
+  height: 150px;
+  padding-top: 60px;
+  color: rgb(29, 139, 145);
+  -webkit-text-stroke: 1px rgb(240, 229, 200);
+  width: 100%;
+}
+body main .part01 .recommend .product-recommend {
+  display: flex;
+  position: relative;
+}
+body main .part01 .recommend .product-recommend .product01 {
+  margin-right: 1px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 4px;
+  flex: 1 1 30%;
+  margin-bottom: 8px;
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* 垂直置中 */
+}
+body main .part01 .recommend .product-recommend .product01 img {
+  padding-bottom: 15px;
+  width: 100%;
+  overflow: hidden;
+  vertical-align: top;
+  -o-object-fit: cover;
+     object-fit: cover; /* 確保圖片填充容器 */
+}
+body main .part01 .recommend .product-recommend .product01 h2 {
+  font-size: 32px;
+  text-align: center;
+  background-color: rgb(29, 139, 145);
+  color: rgb(255, 255, 255);
+}
+body main .part01 .recommend .product-recommend .product01 p {
+  padding: 20px 15px 0px;
+  text-align: center;
+  font-size: 1.2rem;
+}
+body main .part01 .recommend .product-recommend .product01 p:first-child {
+  font-size: 0.9rem;
+}
+body main .part01 .recommend .product-recommend .product01 p:last-child {
+  padding-top: 10px;
+  font-size: 1.3rem;
+}
+body main .part01 .recommend .product-recommend .product01 .price {
+  font-size: 2rem;
+  font-weight: 800;
+  color: rgb(209, 68, 57);
+}
+body main .part01 .recommend .product-recommend .product01 .price .discount {
+  font-size: 1.3rem;
+}
+body main .part01 .recommend .product-recommend .product01:hover {
+  transform: scale(0.95);
+}
+body main .part01 .recommend .product-recommend .product02 {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  flex: 1 1 70%;
+  width: 100%;
+}
+body main .part01 .recommend .product-recommend .product02 .product {
+  display: flex;
+  margin-left: 8px;
+  margin-bottom: 8px;
+  height: auto;
+  border-radius: 4px;
+  background-color: rgb(255, 255, 255);
+  flex: 1 1 48%;
+  transition: transform 0.3s;
+}
+body main .part01 .recommend .product-recommend .product02 .product a {
+  display: flex;
+}
+body main .part01 .recommend .product-recommend .product02 .product a .product-img {
+  padding: 5px 5px 5px 10px;
+  width: 50%;
+  background-color: #ffffff;
+}
+body main .part01 .recommend .product-recommend .product02 .product a .product-img img {
+  width: 100%;
+  overflow: hidden;
+  vertical-align: top;
+  -o-object-fit: cover;
+     object-fit: cover; /* 確保圖片填充容器 */
+}
+body main .part01 .recommend .product-recommend .product02 .product a .product-txt {
+  margin: 10px 5px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+body main .part01 .recommend .product-recommend .product02 .product a .product-txt .product-txt-title .title {
+  padding: 2px;
+  font-size: 0.9rem;
+  color: rgb(20, 20, 20);
+}
+body main .part01 .recommend .product-recommend .product02 .product a .product-txt .product-txt-title .sub-title {
+  padding: 2px;
+  font-size: 0.8rem;
+  color: rgb(116, 116, 116);
+}
+body main .part01 .recommend .product-recommend .product02 .product a .product-txt .product-txt-price {
+  padding: 0px 5px;
+  text-align: right;
+}
+body main .part01 .recommend .product-recommend .product02 .product a .product-txt .product-txt-price .price {
+  font-size: 1.5rem;
+  color: rgb(209, 68, 57);
+}
+body main .part01 .recommend .product-recommend .product02 .product a .product-txt .product-txt-price .price .discount {
+  font-size: 1rem;
+}
+body main .part01 .recommend .product-recommend .product02 .product:hover {
+  transform: scale(0.95);
+}
+body main .summer-keyword {
+  display: flex;
+  margin: 50px 0px;
+  padding: 10px 5px;
+  border-radius: 20px;
+  background-color: rgb(242, 207, 61);
+}
+body main .summer-keyword .summer-keyword-title {
+  flex: 1 1 30%;
+  margin: 5px;
+  position: relative;
+  align-content: center;
+}
+body main .summer-keyword .summer-keyword-title .summer-keyword-title-text h2 {
+  padding: 10px;
+  font-size: 3rem;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  color: rgb(209, 68, 57);
+}
+body main .summer-keyword .summer-keyword-word {
+  flex: 1 1 70%;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+}
+body main .summer-keyword .summer-keyword-word .summer-keyword-words {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex: 1 1 25%;
+  font-size: 1.3rem;
+  transition: font-size 0.3s;
+}
+body main .summer-keyword .summer-keyword-word .summer-keyword-words a {
+  display: flex;
+  margin: 8px;
+  padding: 10px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  color: rgb(20, 20, 20);
+}
+body main .summer-keyword .summer-keyword-word .summer-keyword-words a .summer-keyword-words-content {
+  display: flex;
+}
+body main .summer-keyword .summer-keyword-word .summer-keyword-words a .summer-keyword-words-content p {
+  width: 100px;
+  padding: 0px 15px;
+  justify-content: center;
+  align-content: center;
+}
+body main .summer-keyword .summer-keyword-word .summer-keyword-words a .summer-keyword-words-content img {
+  width: 70px;
+  height: 70px;
+}
+body main .summer-keyword .summer-keyword-word .summer-keyword-words:hover {
+  font-size: 1.4em;
+}
+body main .summer-keyword .summer-keyword-word .summer-keyword-words:hover p {
+  color: rgb(209, 68, 57);
+}
+body main .part02 .summer {
+  margin: 20px 0px;
+}
+body main .part02 .summer .summer-title {
+  margin: 30px;
+}
+body main .part02 .summer .summer-title .summer-title-txt {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 30px 0px;
+}
+body main .part02 .summer .summer-title .summer-title-txt h1 {
+  font-size: 3rem;
+  flex: 1 2 950px;
+  padding: 50px;
+  background: url("/background-img/標題02.png") no-repeat;
+  background-size: 100%;
+  text-align: left;
+  height: 150px;
+  padding-left: 15%;
+  color: rgb(255, 255, 255);
+  -webkit-text-stroke: 1.5px rgb(29, 139, 145);
+  width: 100%;
+}
+body main .part02 .summer .summer-title .summer-title-txt .more {
+  flex: 1 1 100px;
+  position: relative;
+}
+body main .part02 .summer .summer-title .summer-title-txt .more a {
+  left: 40%;
+  justify-content: center;
+  position: absolute;
+  top: 30%;
+  background: rgb(242, 207, 61);
+  border-radius: 40px;
+  padding: 10px 20px;
+  font-size: 32px;
+  color: rgb(20, 20, 20);
+  transition: background-color 0.3s;
+}
+body main .part02 .summer .summer-title .summer-title-txt .more a:hover {
+  background-color: rgb(209, 68, 57);
+  color: rgb(255, 255, 255);
+}
+body main .part02 .summer .summer-products {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+body main .part02 .summer .summer-products .summer-products-product {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex: 1 1 300px;
+}
+body main .part02 .summer .summer-products .summer-products-product a {
+  background-color: rgb(255, 255, 255);
+  border-radius: 30px;
+  padding: 5px;
+}
+body main .part02 .summer .summer-products .summer-products-product a .product {
+  transition: all 0.3s ease;
+}
+body main .part02 .summer .summer-products .summer-products-product a .product h2 {
+  padding: 4px 0px;
+  font-size: 24px;
+  text-align: center;
+  background-color: rgb(209, 68, 57);
+  color: rgb(255, 255, 255);
+}
+body main .part02 .summer .summer-products .summer-products-product a .product p {
+  padding: 10px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+body main .part02 .summer .summer-products .summer-products-product a .product p .price {
+  font-size: 1.5rem;
+  color: rgb(209, 68, 57);
+}
+body main .part02 .summer .summer-products .summer-products-product a .product p .price .discount {
+  font-size: 1rem;
+}
+body main .part02 .summer .summer-products .summer-products-product a .product .summer-img {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  border-radius: 30px 30px 0px 0px;
+}
+body main .part02 .summer .summer-products .summer-products-product a .product .summer-img img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+  vertical-align: middle;
+}
+body main .part02 .summer .summer-products .summer-products-product a .product:hover .summer-img img {
+  transform: scale(1.2);
+  vertical-align: middle;
+}
+body main .part02 .summer .summer-products .summer-products-product a .product:nth-child(3) {
+  margin-right: 0px;
+}
+body main .part02 .summer .summer-products .summer-products-product a:last-child {
+  margin: 0px;
+}
+body main .slide-product {
+  max-width: 1200px;
+  overflow: hidden;
+  margin: 30px 0;
+}
+body main .slide-product .slide-product-all {
+  display: flex;
+  width: 100%;
+  transition: transform 1s ease-in-out;
+  white-space: normal;
+}
+body main .slide-product .slide-product-all .slide-products {
+  flex: 0 0 calc(33.3333333333% - 20px);
+  margin-right: 20px;
+  background-color: #fff;
+  border-radius: 4px;
+  transition: transform 0.3s;
+}
+body main .slide-product .slide-product-all .slide-products:hover {
+  transform: scale(0.95);
+}
+body main .slide-product .slide-product-all .slide-products:last-child {
+  margin-right: 0;
+}
+body main .slide-product .slide-product-all .slide-products a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+body main .slide-product .slide-product-all .slide-products a .slide-products-product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body main .slide-product .slide-product-all .slide-products a .slide-products-product img {
+  padding: 10px;
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+body main .slide-product .slide-product-all .slide-products a .slide-products-product .slide-products-product-txt {
+  text-align: center;
+  margin: 10px 0px;
+}
+body main .slide-product .slide-product-all .slide-products a .slide-products-product .slide-products-product-txt .title {
+  margin-bottom: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+body main .slide-product .slide-product-all .slide-products a .slide-products-product .slide-products-product-txt .title p:first-child {
+  font-size: 1.2rem;
+  padding-bottom: 5px;
+}
+body main .slide-product .slide-product-all .slide-products a .slide-products-product .slide-products-product-txt .title p:last-child {
+  font-size: 0.8rem;
+  color: rgb(116, 116, 116);
+}
+body main .slide-product .slide-product-all .slide-products a .slide-products-product .slide-products-product-txt .price {
+  color: rgb(209, 68, 57);
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+body main .slide-product .slide-product-all .slide-products a .slide-products-product .slide-products-product-txt .price .discount {
+  font-size: 1rem;
+}
+body main .banner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+}
+body main .banner .banner-banner {
+  flex: 1 1 400px;
+  transition: transform 0.3s;
+  display: block;
+  margin: 10px 10px;
+}
+body main .banner .banner-banner a img {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+body main .banner .banner-banner:hover {
+  transform: scale(0.95);
+}
+body main .part03 {
+  margin: 40px 0px;
+}
+body main .part03 .sunblock {
+  background-color: rgb(242, 207, 61);
+  padding: 10px 20px;
+  border-radius: 20px;
+  width: 100%;
+  display: flex;
+  margin: 60px 0px;
+}
+body main .part03 .sunblock .sunblock-product-small {
+  flex: 1 1 70%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+body main .part03 .sunblock .sunblock-product-small .sunblock-title {
+  margin: 5px;
+  padding: 10px;
+  width: 100%;
+}
+body main .part03 .sunblock .sunblock-product-small .sunblock-title h1 {
+  font-size: 40px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+body main .part03 .sunblock .sunblock-product-small .sunblock-title .title01 {
+  background: url("/background-img/標題03.png") no-repeat center;
+  background-size: contain;
+  width: 100%;
+}
+body main .part03 .sunblock .sunblock-product-small .sunblock-title .title02 {
+  background: url("/background-img/標題04.png") no-repeat center;
+  background-size: contain;
+  width: 100%;
+}
+body main .part03 .sunblock .sunblock-product-small .sunblock-products {
+  display: flex;
+  flex: 1 2 350px;
+  margin: 5px 0px;
+  padding: 5px;
+  width: 50%;
+  transition: transform 0.3s;
+}
+body main .part03 .sunblock .sunblock-product-small .sunblock-products:hover {
+  transform: scale(0.95);
+}
+body main .part03 .sunblock .sunblock-product-small .sunblock-products a {
+  display: flex;
+  flex: 1 1 48%;
+  background-color: rgb(255, 255, 255);
+  border-radius: 4px;
+}
+body main .part03 .sunblock .sunblock-product-small .sunblock-products a img {
+  flex: 1 1 50%;
+  padding: 10px;
+  width: 100%;
+}
+body main .part03 .sunblock .sunblock-product-small .sunblock-products a .sunblock-products-txt {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1 1 50%;
+}
+body main .part03 .sunblock .sunblock-product-small .sunblock-products a .sunblock-products-txt .sunblock-products-txt-title p {
+  padding: 3px 0px;
+}
+body main .part03 .sunblock .sunblock-product-small .sunblock-products a .sunblock-products-txt .sunblock-products-txt-title p:nth-child(1) {
+  font-size: 0.9rem;
+}
+body main .part03 .sunblock .sunblock-product-small .sunblock-products a .sunblock-products-txt .sunblock-products-txt-title p:nth-child(2) {
+  font-size: 0.8rem;
+  color: rgb(116, 116, 116);
+}
+body main .part03 .sunblock .sunblock-product-small .sunblock-products a .sunblock-products-txt .sunblock-products-txt-price {
+  text-align: right;
+}
+body main .part03 .sunblock .sunblock-product-small .sunblock-products a .sunblock-products-txt .sunblock-products-txt-price .price {
+  font-size: 1.5rem;
+  color: rgb(209, 68, 57);
+}
+body main .part03 .sunblock .sunblock-product-small .sunblock-products a .sunblock-products-txt .sunblock-products-txt-price .price .discount {
+  font-size: 1rem;
+}
+body main .part03 .sunblock .sunblock-product-big {
+  flex: 1 1 30%;
+  margin: 5px;
+  display: flex;
+  flex-wrap: wrap;
+}
+body main .part03 .sunblock .sunblock-product-big .sunblock-product-bigs {
+  display: flex;
+  flex: 1 1 45%;
+  margin: 0px 10px 5px 10px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 4px;
+  transition: transform 0.3s;
+}
+body main .part03 .sunblock .sunblock-product-big .sunblock-product-bigs:hover {
+  transform: scale(0.95);
+}
+body main .part03 .sunblock .sunblock-product-big .sunblock-product-bigs a {
+  width: 100%;
+}
+body main .part03 .sunblock .sunblock-product-big .sunblock-product-bigs a .sunblock-product-bigs-big {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+body main .part03 .sunblock .sunblock-product-big .sunblock-product-bigs a .sunblock-product-bigs-big img {
+  padding: 10px;
+}
+body main .part03 .sunblock .sunblock-product-big .sunblock-product-bigs a .sunblock-product-bigs-big p {
+  text-align: center;
+  padding: 4px 0px;
+}
+body main .part03 .sunblock .sunblock-product-big .sunblock-product-bigs a .sunblock-product-bigs-big p:nth-child(2) {
+  font-size: 0.9rem;
+}
+body main .part03 .sunblock .sunblock-product-big .sunblock-product-bigs a .sunblock-product-bigs-big p:nth-child(3) {
+  font-size: 0.8rem;
+  color: rgb(116, 116, 116);
+}
+body main .part03 .sunblock .sunblock-product-big .sunblock-product-bigs a .sunblock-product-bigs-big p:nth-child(4) .price {
+  font-size: 1.5rem;
+  color: rgb(209, 68, 57);
+}
+body main .part03 .sunblock .sunblock-product-big .sunblock-product-bigs a .sunblock-product-bigs-big p:nth-child(4) .price .discount {
+  font-size: 1rem;
+}
+body main .banner02 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+}
+body main .banner02 .banner02-top {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+body main .banner02 .banner02-top a {
+  flex: 1 1 400px;
+  padding: 10px;
+}
+body main .banner02 .banner02-top a:first-child {
+  margin-left: 0;
+}
+body main .banner02 .banner02-top a:last-child {
+  margin-right: 0;
+}
+body main .banner02 .banner02-top a img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s;
+}
+body main .banner02 .banner02-top a img:hover {
+  transform: scale(0.95);
+}
+body main .banner02 .banner02-bottom {
+  width: 100%;
+  max-width: 1200px;
+}
+body main .banner02 .banner02-bottom a img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s;
+}
+body main .banner02 .banner02-bottom a img:hover {
+  transform: scale(0.95);
+}
+body main .homepage-img {
+  margin-bottom: 40px;
+}
+body main .homepage-img img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s;
+  vertical-align: middle;
+}
+body main .homepage-img img:hover {
+  transform: scale(0.95);
+}
+body footer .copyright {
+  padding: 20px;
+}
+body footer .copyright p {
+  text-align: center;
+  font-size: 12px;
+}
+
+/* Media Queries for Responsive Design */
+@media screen and (min-width: 993px) {
+  .scrollmenu {
+    display: none;
+  }
+  header .header-banner img {
+    display: none;
+  }
+  header,
+  main {
+    max-width: 100%;
+  }
+  .banner-768 {
+    display: none;
+  }
+  .banner-576 {
+    display: none;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  .sidebar-header {
+    display: none;
+  }
+  .scrollmenu ul {
+    visibility: visible;
+  }
+  header {
+    display: none;
+  }
+  .background-img {
+    display: none;
+  }
+  .banner-576 {
+    display: none;
+  }
+  main {
+    margin: 0 auto;
+    max-width: 800px;
+  }
+  main h1 {
+    font-size: 2rem;
+  }
+  main .part01 .recommend .product-recommend {
+    flex-wrap: wrap;
+  }
+  main .summer-keyword {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  main .part03 .sunblock {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (min-width: 577px) and (max-width: 768px) {
+  .sidebar-header {
+    display: none;
+  }
+  header {
+    display: none;
+  }
+  .banner-576 {
+    display: none;
+  }
+  .background-img {
+    display: none;
+  }
+  main {
+    margin: 0 auto;
+    max-width: 650px;
+  }
+  main h1 {
+    font-size: 1.5rem;
+  }
+  main .part01 .recommend .product-recommend {
+    flex-wrap: wrap;
+  }
+  main .summer-keyword {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  main .summer .summer-title .summer-title-txt {
+    flex-wrap: wrap;
+  }
+  main .part03 .sunblock {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  main .part03 .sunblock .sunblock-product-smal {
+    flex-wrap: wrap;
+  }
+}
+@media only screen and (max-width: 576px) {
+  header {
+    display: none;
+  }
+  .sidebar-header {
+    display: none;
+  }
+  .banner-768 {
+    display: none;
+  }
+  .background-img {
+    display: none;
+  }
+  main {
+    margin: 0 auto;
+    max-width: 370px;
+  }
+  main .part01 .recommend .product-recommend {
+    flex-wrap: wrap;
+  }
+  main .summer-keyword {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  main .part03 .sunblock {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  main .part03 .sunblock .sunblock-product-smal {
+    flex-wrap: wrap;
+  }
+}/*# sourceMappingURL=style.css.map */
