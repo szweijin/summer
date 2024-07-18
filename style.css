@@ -407,7 +407,7 @@ body main .part01 .recommend .title01 {
 }
 body main .part01 .recommend .title01 h1 {
   font-size: 3rem;
-  background: url("/background-img/標題01.png") no-repeat center;
+  background: url("background-img/標題01.png") no-repeat center;
   background-size: 100%;
   text-align: center;
   height: 150px;
@@ -610,7 +610,7 @@ body main .part02 .summer .summer-title .summer-title-txt h1 {
   font-size: 3rem;
   flex: 1 2 950px;
   padding: 50px;
-  background: url("/background-img/標題02.png") no-repeat;
+  background: url("background-img/標題02.png") no-repeat;
   background-size: 100%;
   text-align: left;
   height: 150px;
@@ -817,12 +817,12 @@ body main .part03 .sunblock .sunblock-product-small .sunblock-title h1 {
   color: rgb(255, 255, 255);
 }
 body main .part03 .sunblock .sunblock-product-small .sunblock-title .title01 {
-  background: url("/background-img/標題03.png") no-repeat center;
+  background: url("background-img/標題03.png") no-repeat center;
   background-size: contain;
   width: 100%;
 }
 body main .part03 .sunblock .sunblock-product-small .sunblock-title .title02 {
-  background: url("/background-img/標題04.png") no-repeat center;
+  background: url("background-img/標題04.png") no-repeat center;
   background-size: contain;
   width: 100%;
 }
